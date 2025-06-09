@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://c4bm6ibob2vf1"]
+
+[ext_resource type="Script" path="res://worlds/world_00.gd" id="1_ejlam"]
+[ext_resource type="Script" path="res://creatures/gen_00/base_node/genesis_spider.gd" id="1_jg8s6"]
+[ext_resource type="Script" path="res://creatures/gen_00/data/statuses/weakness.gd" id="2_niwau"]
+[ext_resource type="Script" path="res://creatures/gen_00/data/base_stats.gd" id="2_p0qnv"]
+
+[sub_resource type="Resource" id="Resource_t80oo"]
+script = ExtResource("2_p0qnv")
+name = "Jeckemy"
+max_health = 1000.0
+cur_health = 1000.0
+max_stamina = 500.0
+cur_stamina = 500.0
+
+[node name="world_00" type="Node"]
+script = ExtResource("1_ejlam")
+
+[node name="Genesis_Spider" type="CharacterBody3D" parent="." node_paths=PackedStringArray("all_status")]
+script = ExtResource("1_jg8s6")
+stat_resource = SubResource("Resource_t80oo")
+all_status = [NodePath("Weakness")]
+
+[node name="Weakness" type="Node" parent="Genesis_Spider"]
+script = ExtResource("2_niwau")
+affected_triggers = Array[String](["ice_damage"])
