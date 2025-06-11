@@ -6,6 +6,6 @@ class_name Weakness
 #func _ready() -> void:
 	#affected_triggers.append("ice_damage")
 
-func apply_effect(value):
+func apply_effect(value, _caller):
 	var output : float = float(value)
 	return (output * (1 - reduction_factor))

@@ -23,4 +23,5 @@ all_status = [NodePath("Weakness")]
 
 [node name="Weakness" type="Node" parent="Genesis_Spider"]
 script = ExtResource("2_niwau")
+reduction_factor = -0.1
 affected_triggers = Array[String](["ice_damage"])
